@@ -27,9 +27,9 @@ atom
     | LPAREN expr RPAREN
     ;
 action
-    : DISPLAY mathFunc
-    | CREATE
-    | READ
+    : DISPLAY (mathFunc | func)
+    | CREATE func
+    | READ 
     ;
 
 NEWTON: 'newton';
