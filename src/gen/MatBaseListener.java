@@ -77,13 +77,6 @@ public class MatBaseListener implements MatListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReadAction(MatParser.ReadActionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitReadAction(MatParser.ReadActionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

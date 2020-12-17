@@ -18,35 +18,26 @@ public interface MatVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProg(MatParser.ProgContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MatParser#action}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAction(MatParser.ActionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link MatParser#displayAction}.
+	 * Visit a parse tree produced by the {@code DisplayAction}
+	 * labeled alternative in {@link MatParser#action}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDisplayAction(MatParser.DisplayActionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MatParser#assignAction}.
+	 * Visit a parse tree produced by the {@code AssignAction}
+	 * labeled alternative in {@link MatParser#action}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAssignAction(MatParser.AssignActionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MatParser#createAction}.
+	 * Visit a parse tree produced by the {@code CreateAction}
+	 * labeled alternative in {@link MatParser#action}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitCreateAction(MatParser.CreateActionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link MatParser#readAction}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReadAction(MatParser.ReadActionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MatParser#matrix}.
 	 * @param ctx the parse tree

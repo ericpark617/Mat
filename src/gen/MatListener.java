@@ -59,16 +59,6 @@ public interface MatListener extends ParseTreeListener {
 	 */
 	void exitCreateAction(MatParser.CreateActionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MatParser#readAction}.
-	 * @param ctx the parse tree
-	 */
-	void enterReadAction(MatParser.ReadActionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link MatParser#readAction}.
-	 * @param ctx the parse tree
-	 */
-	void exitReadAction(MatParser.ReadActionContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link MatParser#matrix}.
 	 * @param ctx the parse tree
 	 */

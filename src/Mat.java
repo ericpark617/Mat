@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class Mat {
     public static void main(String[] args) throws Exception {
-        // the if statements were taken from somewhere and prob needs to be replaced
+        //program runs from some test file
         File inputFile = new File("C:/Users/Main PC/Documents/Mat/src/test.txt");
         InputStream is = null;
         org.antlr.v4.runtime.CharStream input = null;
@@ -40,11 +40,12 @@ public class Mat {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MatParser parser = new MatParser(tokens);
 
-        Value value = new EvalVisitor().visit(parser.prog());
+        Value value = new EvalVisitor().visit(parser.expr());
         System.out.println("\n" + value);
     }
 }
 
+//custom type to work with int and double
 class Value {
     final Object value;
 
@@ -58,13 +59,16 @@ class Value {
     }
 }
 
+//Custom visitor to add functionality to the grammar
 class EvalVisitor extends MatBaseVisitor<Value> {
+    //a map for storing variables to work with
     Map<String, List<Value>> memory;
 
     public EvalVisitor() {
         memory = new HashMap<String, List<Value>>();
     }
 
+    //Create a matrix and store it to an id
     @Override
     public Value visitCreateAction(MatParser.CreateActionContext ctx) {
         List<Value> values = new ArrayList<>();
@@ -92,6 +96,7 @@ class EvalVisitor extends MatBaseVisitor<Value> {
         return new Value(values);
     }
 
+    //Add amd subtracting matrices
     @Override
     public Value visitPlusminus(MatParser.PlusminusContext ctx) {
         List<Value> values = new ArrayList<>();
@@ -132,8 +137,11 @@ class EvalVisitor extends MatBaseVisitor<Value> {
                 }
             }
         }
+
         return new Value(values);
     }
+
+    //Multiply not functional
 
     // @Override
     // public Value visitMultdiv(MatParser.MultdivContext ctx) {

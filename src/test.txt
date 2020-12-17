@@ -1,2 +1,0 @@
-create 2 by 2 matrix where [1,2,3,4] to x
-display x

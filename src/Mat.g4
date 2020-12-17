@@ -1,31 +1,25 @@
 grammar Mat;
 prog: action* EOF;
 action
-    : displayAction
-    | assignAction
-    | createAction
-    | readAction
+    : DISPLAY expr                                                         #DisplayAction
+    | ID EQ expr                                                           #AssignAction
+    | CREATE INT 'by' INT 'matrix where' SQLPAREN matrix SQRPAREN 'to' ID  #CreateAction
     ;
-displayAction: DISPLAY expr;
-assignAction: ID EQ expr;
-createAction: CREATE INT 'by' INT 'matrix where' SQLPAREN matrix SQRPAREN 'to' ID;
-readAction: READ matrix;
 
 matrix: (INT|DOUBLE) (','(INT|DOUBLE))*;
-expr: matrix (PLUS|MINUS) matrix        #Plusminus
-    | matrix (MULT|DIV) matrix          #Multdiv
-    | <assoc=right> expr POW expr   #Power
-    | atom                          #Atm
+expr: matrix (PLUS|MINUS) matrix                                           #Plusminus
+    | expr MULT expr                                                       #Multdiv
+    | <assoc=right> expr POW expr                                          #Power
+    | atom                                                                 #Atm
     ;
-atom: INT                           #Integer
-    | DOUBLE                        #Double
-    | ID                            #Identifier
-    | matrix                        #Matr
+atom: INT                                                                  #Integer
+    | DOUBLE                                                               #Double
+    | ID                                                                   #Identifier
+    | matrix                                                               #Matr
     ;
 
 DISPLAY: 'display';
 CREATE: 'create';
-READ: 'read';
 
 POW: '^';
 SQLPAREN: '[';

@@ -25,13 +25,6 @@ public class MatBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ma
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAction(MatParser.ActionContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitDisplayAction(MatParser.DisplayActionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -47,13 +40,6 @@ public class MatBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Ma
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCreateAction(MatParser.CreateActionContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitReadAction(MatParser.ReadActionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
