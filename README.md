@@ -1,4 +1,7 @@
 # Matrix Handling Language (MAT)
+MAT is a simple specialized language that is designed to work with and manipulate matrices in various ways. It is able to take a string of numbers as input and produce a matrix structure output. MAT also allows for the user to take two matrices and conduct arithmetic operations on them such as addition, subtraction, and multiplication. The user is responsible to know the requirements of conducting such operations as there are certain requirements that must be met to manipulate matrices. The values that make up the matrices are composed of primitive types such as integers and floats. The program is translated to Java so it will be able to run on any JVM platform. The syntax for solving mathematical expressions with matrices is designed to be the same as calculating simple arithmetic expressions on paper or in any modern programming language. For any other action, the syntax is designed to flow naturally using the English language to describe what the action will do. For example, the action 'display matrix' will print the selected matrix on the console.
+
+*Disclaimer: This language is not in full working condition. Therefore there are no steps to compile and run this project at this moment.
 
 # Repository Contents
 - /README.md - this file
