@@ -39,9 +39,8 @@ public class Mat {
         MatLexer lexer = new MatLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MatParser parser = new MatParser(tokens);
-
-        Value value = new EvalVisitor().visit(parser.expr());
-        System.out.println("\n" + value);
+        // walk the parse tree
+        new EvalVisitor().visit(parser.prog());
     }
 }
 
